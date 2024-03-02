@@ -81,6 +81,7 @@ body {
 }
 #question svg {
   margin-left: 72px;
+  cursor: pointer;
 }
 #question.svg_space svg {
   margin-left: 137px;
@@ -103,4 +104,13 @@ body {
   position: fixed;
   margin-top: 213px;
   margin-left: -92px;
+}
+
+p{
+  color: #787887;
+font-family: "Kumbh Sans";
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px; /* 150% */
 }
