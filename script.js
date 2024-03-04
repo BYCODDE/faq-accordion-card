@@ -20,13 +20,14 @@ questions.forEach(function (question, index) {
       question.style.paddingBottom = "30px";
       // line.style.display = "block"; // Show the line
       paragraph.style.marginTop = "35px";
-      line.style.marginTop = "70px";
+      line.style.marginTop = "95px";
     } else {
       svg.style.transform = "none";
       question.style.fontWeight = "400";
       let paragraphToRemove = document.getElementById("myParagraph");
       paragraphToRemove.remove();
       question.style.paddingBottom = "0px";
+      line.style.marginTop = "50px";
       // line.style.display = "none"; // Hide the line
     }
     isChanged = !isChanged;
@@ -37,6 +38,7 @@ orangeSvgs.forEach(function (svg) {
   svg.addEventListener("click", function () {
     if (isChanged) {
       svg.style.transform = "rotate(180deg)";
+      console.log(questions);
       questions.style.fontWeight = "700";
     } else {
       svg.style.transform = "none";
