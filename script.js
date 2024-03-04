@@ -1,33 +1,33 @@
 let questions = document.querySelectorAll("#question h3");
 let orangeSvgs = document.querySelectorAll("#question svg");
-let questionsDiv = document.querySelector("#question");
-let line = document.querySelectorAll("#line");
-console.log(line);
+let questionsDivs = document.querySelectorAll("#question");
+let lines = document.querySelectorAll("#line");
 let isChanged = true;
-
 questions.forEach(function (question, index) {
   question.addEventListener("click", function () {
     let paragraph = document.createElement("p");
     paragraph.setAttribute("id", "myParagraph");
-    let paragraphToRemove = document.getElementById("myParagraph");
     let svg = orangeSvgs[index];
+    let questionDiv = questionsDivs[index];
+    let line = lines[index];
+
     if (isChanged) {
-      console.log(isChanged);
       paragraph.textContent =
         "No more than 2GB. All files in your account must fit your allotted storage space.";
-      questionsDiv.appendChild(paragraph);
+      questionDiv.appendChild(paragraph);
       question.style.fontWeight = "700";
       svg.style.transform = "rotate(180deg)";
-      // question.style.marginTop = "100px";
       question.style.paddingBottom = "30px";
-      // question.style.paddingTop = "19px";
+      // line.style.display = "block"; // Show the line
       paragraph.style.marginTop = "35px";
+      line.style.marginTop = "70px";
     } else {
-      console.log(isChanged);
       svg.style.transform = "none";
       question.style.fontWeight = "400";
-      paragraph.style.display = "none";
+      let paragraphToRemove = document.getElementById("myParagraph");
       paragraphToRemove.remove();
+      question.style.paddingBottom = "0px";
+      // line.style.display = "none"; // Hide the line
     }
     isChanged = !isChanged;
   });
@@ -35,7 +35,6 @@ questions.forEach(function (question, index) {
 
 orangeSvgs.forEach(function (svg) {
   svg.addEventListener("click", function () {
-    console.log(isChanged);
     if (isChanged) {
       svg.style.transform = "rotate(180deg)";
       questions.style.fontWeight = "700";
@@ -46,3 +45,5 @@ orangeSvgs.forEach(function (svg) {
     isChanged = !isChanged;
   });
 });
+
+// FIXME: JER HTML UNDA VNAXE KARGAD DA MERE GADAVIDE JS-ZE DA TU VER MIVAGENI HTML-I CHAVUGDO CHATS
