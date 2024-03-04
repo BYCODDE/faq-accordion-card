@@ -73,6 +73,7 @@ body {
   padding-top: 19px;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 #question_h3 {
@@ -106,11 +107,12 @@ body {
   margin-left: -92px;
 }
 
-p{
+p {
   color: #787887;
-font-family: "Kumbh Sans";
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: 18px; /* 150% */
+  font-family: "Kumbh Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  position: absolute;
 }
