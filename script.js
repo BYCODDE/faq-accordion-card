@@ -7,11 +7,12 @@ questions.forEach(function (question, index) {
   question.addEventListener("click", function () {
     let paragraph = document.createElement("p");
     paragraph.setAttribute("id", "myParagraph");
+    let paragraphToRemove = document.getElementById("myParagraph");
     let svg = orangeSvgs[index];
     let questionDiv = questionsDivs[index];
     let line = lines[index];
-
-    if (isChanged) {
+    console.log(paragraph);
+    if (isChanged && !paragraphToRemove) {
       paragraph.textContent =
         "No more than 2GB. All files in your account must fit your allotted storage space.";
       questionDiv.appendChild(paragraph);
@@ -24,7 +25,6 @@ questions.forEach(function (question, index) {
     } else {
       svg.style.transform = "none";
       question.style.fontWeight = "400";
-      let paragraphToRemove = document.getElementById("myParagraph");
       paragraphToRemove.remove();
       question.style.paddingBottom = "0px";
       line.style.marginTop = "50px";
@@ -34,18 +34,18 @@ questions.forEach(function (question, index) {
   });
 });
 
+// questions.forEach(function (question) {
+console.log(question);
 orangeSvgs.forEach(function (svg) {
   svg.addEventListener("click", function () {
     if (isChanged) {
       svg.style.transform = "rotate(180deg)";
-      console.log(questions);
-      questions.style.fontWeight = "700";
+      question.style.fontWeight = "700";
     } else {
       svg.style.transform = "none";
-      questions.style.fontWeight = "400";
+      question.style.fontWeight = "400";
     }
     isChanged = !isChanged;
   });
 });
-
-// FIXME: JER HTML UNDA VNAXE KARGAD DA MERE GADAVIDE JS-ZE DA TU VER MIVAGENI HTML-I CHAVUGDO CHATS
+// });
