@@ -5,32 +5,53 @@ let lines = document.querySelectorAll("#line");
 let isChanged = true;
 questions.forEach(function (question, index) {
   question.addEventListener("click", function () {
-    let paragraph = document.createElement("p");
-    paragraph.setAttribute("id", "myParagraph");
-    let paragraphToRemove = document.getElementById("myParagraph");
-    let svg = orangeSvgs[index];
-    let questionDiv = questionsDivs[index];
-    let line = lines[index];
-    console.log(paragraph);
-    if (isChanged && !paragraphToRemove) {
-      paragraph.textContent =
-        "No more than 2GB. All files in your account must fit your allotted storage space.";
-      questionDiv.appendChild(paragraph);
-      question.style.fontWeight = "700";
-      svg.style.transform = "rotate(180deg)";
-      question.style.paddingBottom = "30px";
-      // line.style.display = "block"; // Show the line
-      paragraph.style.marginTop = "35px";
-      line.style.marginTop = "95px";
-    } else {
-      svg.style.transform = "none";
-      question.style.fontWeight = "400";
-      paragraphToRemove.remove();
-      question.style.paddingBottom = "0px";
-      line.style.marginTop = "50px";
-      // line.style.display = "none"; // Hide the line
-    }
-    isChanged = !isChanged;
+    // let paragraph = document.createElement("p");
+    // paragraph.setAttribute("id", "myParagraph");
+    // let paragraphToRemove = document.getElementById("myParagraph");
+    // let svg = orangeSvgs[index];
+    // let questionDiv = questionsDivs[index];
+    // let line = lines[index];
+    // console.log(paragraph);
+    // if (isChanged && !paragraphToRemove) {
+    //   paragraph.textContent =
+    //     "No more than 2GB. All files in your account must fit your allotted storage space.";
+    //   questionDiv.appendChild(paragraph);
+    //   question.style.fontWeight = "700";
+    //   svg.style.transform = "rotate(180deg)";
+    //   question.style.paddingBottom = "30px";
+    //   // line.style.display = "block"; // Show the line
+    //   paragraph.style.marginTop = "35px";
+    //   line.style.marginTop = "95px";
+    // } else {
+    //   svg.style.transform = "none";
+    //   question.style.fontWeight = "400";
+    //   paragraphToRemove.remove();
+    //   question.style.paddingBottom = "0px";
+    //   line.style.marginTop = "50px";
+    //   // line.style.display = "none"; // Hide the line
+    // }
+    // isChanged = !isChanged;
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   });
 });
 
