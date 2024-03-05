@@ -1,20 +1,32 @@
-let questions = document.querySelectorAll("#question h3");
+let questions = document.querySelectorAll("#question .under_div  h3");
 let orangeSvgs = document.querySelectorAll("#question svg");
 let questionsDivs = document.querySelectorAll("#question");
 let lines = document.querySelectorAll("#line");
 let pTags = document.querySelectorAll("#main_p");
-// let isChanged = true;
 
-questions.forEach(function (question, index) {
+questionsDivs.forEach(function (question, index) {
   question.addEventListener("click", function () {
     pTags.forEach(function (paragraph) {
       paragraph.style.display = "none";
+      questions.forEach(function (question2) {
+        question2.style.fontWeight = "400";
+      });
     });
+
     let paragraphToShow = pTags[index];
+    let fontChange = question.children[0].children[0];
+    fontChange.style.fontWeight = "700";
+
     paragraphToShow.style.display = "block";
   });
 });
 
+// FIXME: კოდი გავანალიზო ისევ!!!          და           2 კლიკზე უნდა დაიხუროს და ეგ დარჩა მარტო!!!
+
+
+
+
+// let isChanged = true;
 // let paragraph = document.createElement("p");
 // paragraph.setAttribute("id", "myParagraph");
 // let paragraphToRemove = document.getElementById("myParagraph");
@@ -42,6 +54,8 @@ questions.forEach(function (question, index) {
 // }
 // isChanged = !isChanged;
 
+// });
+// });
 // questions.forEach(function (question) {
 // orangeSvgs.forEach(function (svg) {
 //   svg.addEventListener("click", function () {
@@ -54,5 +68,3 @@ questions.forEach(function (question, index) {
 //     }
 //     isChanged = !isChanged;
 //   });
-// });
-// });
