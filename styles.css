@@ -50,14 +50,14 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: 65px;
+  margin-top: 57px;
   margin-left: -273px;
 }
 
 .main_questiondiv {
-  margin-top: 45px;
+  margin-top: 25px;
 }
-.main_questiondiv h3:hover {
+.under_div h3:hover {
   cursor: pointer;
   color: #f47b56;
 }
@@ -118,6 +118,7 @@ p {
   line-height: 18px;
   margin-left: 11px;
   /* position: absolute; */
+  display: none;
 }
 
 .under_div {
