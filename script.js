@@ -7,9 +7,10 @@ let isChanged = 0;
 
 questionsDivs.forEach(function (question, index) {
   question.addEventListener("click", function () {
-    orangeSvgs.forEach(function () {
+    orangeSvgs.forEach(function (svg) {
       pTags.forEach(function (paragraph) {
         paragraph.style.display = "none";
+        svg.style.transform = "rotate(0deg)";
         questions.forEach(function (question2) {
           question2.style.fontWeight = "400";
         });
