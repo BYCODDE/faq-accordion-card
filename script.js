@@ -7,23 +7,27 @@ let isChanged = 0;
 
 questionsDivs.forEach(function (question, index) {
   question.addEventListener("click", function () {
-    pTags.forEach(function (paragraph) {
-      paragraph.style.display = "none";
-      questions.forEach(function (question2) {
-        question2.style.fontWeight = "400";
+    orangeSvgs.forEach(function () {
+      pTags.forEach(function (paragraph) {
+        paragraph.style.display = "none";
+        questions.forEach(function (question2) {
+          question2.style.fontWeight = "400";
+        });
       });
     });
-
+    let svgToShow = orangeSvgs[index];
     let paragraphToShow = pTags[index];
     let fontChange = question.children[0].children[0];
     if (isChanged !== question) {
       paragraphToShow.style.display = "block";
       fontChange.style.fontWeight = "700";
       isChanged = question;
+      svgToShow.style.transform = "rotate(180deg)";
     } else {
       paragraphToShow.style.display = "none";
       fontChange.style.fontWeight = "400";
       isChanged = 0;
+      svgToShow.style.transform = "rotate(360deg)";
     }
   });
 });
