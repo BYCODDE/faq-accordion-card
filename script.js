@@ -3,6 +3,7 @@ let orangeSvgs = document.querySelectorAll("#question svg");
 let questionsDivs = document.querySelectorAll("#question");
 let lines = document.querySelectorAll("#line");
 let pTags = document.querySelectorAll("#main_p");
+let isChanged = 0;
 
 questionsDivs.forEach(function (question, index) {
   question.addEventListener("click", function () {
@@ -15,56 +16,14 @@ questionsDivs.forEach(function (question, index) {
 
     let paragraphToShow = pTags[index];
     let fontChange = question.children[0].children[0];
-    fontChange.style.fontWeight = "700";
-
-    paragraphToShow.style.display = "block";
+    if (isChanged !== question) {
+      paragraphToShow.style.display = "block";
+      fontChange.style.fontWeight = "700";
+      isChanged = question;
+    } else {
+      paragraphToShow.style.display = "none";
+      fontChange.style.fontWeight = "400";
+      isChanged = 0;
+    }
   });
 });
-
-// FIXME: კოდი გავანალიზო ისევ!!!          და           2 კლიკზე უნდა დაიხუროს და ეგ დარჩა მარტო!!!
-
-
-
-
-// let isChanged = true;
-// let paragraph = document.createElement("p");
-// paragraph.setAttribute("id", "myParagraph");
-// let paragraphToRemove = document.getElementById("myParagraph");
-// let svg = orangeSvgs[index];
-// let questionDiv = questionsDivs[index];
-// let line = lines[index];
-// console.log(paragraph);
-// if (isChanged && !paragraphToRemove) {
-//   paragraph.textContent =
-//     "No more than 2GB. All files in your account must fit your allotted storage space.";
-//   questionDiv.appendChild(paragraph);
-//   question.style.fontWeight = "700";
-//   svg.style.transform = "rotate(180deg)";
-//   question.style.paddingBottom = "30px";
-//   // line.style.display = "block"; // Show the line
-//   paragraph.style.marginTop = "35px";
-//   line.style.marginTop = "95px";
-// } else {
-//   svg.style.transform = "none";
-//   question.style.fontWeight = "400";
-//   paragraphToRemove.remove();
-//   question.style.paddingBottom = "0px";
-//   line.style.marginTop = "50px";
-//   // line.style.display = "none"; // Hide the line
-// }
-// isChanged = !isChanged;
-
-// });
-// });
-// questions.forEach(function (question) {
-// orangeSvgs.forEach(function (svg) {
-//   svg.addEventListener("click", function () {
-//     if (isChanged) {
-//       svg.style.transform = "rotate(180deg)";
-//       question.style.fontWeight = "700";
-//     } else {
-//       svg.style.transform = "none";
-//       question.style.fontWeight = "400";
-//     }
-//     isChanged = !isChanged;
-//   });
